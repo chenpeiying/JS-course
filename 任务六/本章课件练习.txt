@@ -1,0 +1,37 @@
+1：函数对象：
+
+所有的对象都是object类型
+console.log(Function instanceof Function);
+console.log(Function instanceof Object);
+console.log(Array instanceof Function);
+console.log(Array instanceof Object);
+2：函数对象的属性及方法
+
+函数对象的属性
+length：形参的个数
+arguments length：实参的个数
+ console.log(arguments);
+    console.log(arguments === test.arguments);
+    console.log(arguments.length);
+    var args = Array.prototype.splice.call(arguments,0);
+    console.log(args);
+};
+foo(1,2,3,4);
+
+caller、Callee
+prototype
+函数对象的的方法
+call、apply
+bind
+tostring、valueof
+3：高阶函数
+函数作为参数被传递
+函数作为返回值输出
+var word_2 = "do another thing.";
+var function_1=function(callback){
+    this.word_1 = "do something.";
+    console.log(this.word_1);
+    (callback && typeof(callback) === "function") && callback();
+};
+var function_2=function(){console.log(this.word_2)};
+function_1(function_2);
