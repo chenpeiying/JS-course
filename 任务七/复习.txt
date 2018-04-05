@@ -1,0 +1,85 @@
+var a=10;
+
+var b=20;
+
+function fn(){
+
+	var a=100;
+
+	var c=200;
+
+	function bar(){
+
+		var a=1;
+
+		var d=2;
+
+	
+}
+
+	bar();	
+	console.log(a,b,c,d);
+
+}
+
+fn();
+
+
+var scope="global";
+function checkscope()
+{
+
+	var scope ="local";
+
+	return function(){
+
+		return scope;
+
+	};
+
+}
+
+console.log(checkscope()());
+
+ local
+undefined
+var scope="global";
+function checkscope(){
+
+	var scope ="local";
+
+	return new Function("return scope")
+
+}
+
+console.log(checkscope()());
+
+function f(){
+
+  {
+
+  var i = 10;
+  console.log(i);
+  i++;
+  }
+console.log(i);
+}
+f();
+
+var useid=123;
+document.onclick=function(){
+
+
+	console.log(useid);
+}
+(function(){
+
+	var a=2,b=3;
+	if(a<b)
+   
+ {
+
+		var usedid=234;
+	}
+}());
+
